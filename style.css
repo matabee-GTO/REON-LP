@@ -1,0 +1,364 @@
+/* BACKGROUND ANIMATION */
+#background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it's behind all content */
+    transform: translateZ(-1px) scale(2); /* Parallax effect: scale to fill space after translateZ */
+    transform-origin: center center; /* Ensure scaling is from center */
+}
+
+/* CURSOR TRAIL */
+#cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Ensure it's above most content but below modals/popups if any */
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* GENERAL STYLES */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    height: 100vh; /* Ensure body takes full viewport height */
+    overflow-y: auto; /* Enable scrolling on body */
+}
+
+#main-content-wrapper {
+    position: relative;
+    z-index: 1; /* Ensure content is above background */
+    transform: translateZ(0); /* Force hardware acceleration */
+}
+
+a {
+    color: #00BFFF;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.content-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.content-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 60px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/* HERO SECTION */
+#hero {
+    height: 100vh;
+    background: url('assets/images/ヒーローセクション.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.hero-content .subtitle {
+    font-size: 1.2rem;
+    color: #00BFFF;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin: 10px 0 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 35px;
+    border: 2px solid #00BFFF;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #00BFFF;
+    color: #0A0A0A;
+}
+
+/* NEWS SECTION */
+.news-list li {
+    border-bottom: 1px solid #333;
+    padding: 20px 0;
+    font-size: 1rem;
+    color: #888888;
+}
+
+.news-list .date {
+    color: #FFFFFF;
+    margin-right: 15px;
+}
+
+.news-list .category {
+    color: #00BFFF;
+    margin-right: 15px;
+}
+
+.view-all {
+    display: block;
+    text-align: right;
+    margin-top: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* PROFILE SECTION */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.profile-text h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.profile-text p {
+    color: #888888;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.profile-text h4 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+.awards-list li {
+    color: #888888;
+    margin-bottom: 10px;
+}
+
+.profile-image img {
+    filter: grayscale(100%);
+}
+
+/* DISCOGRAPHY SECTION */
+.album-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.album-info h3 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.track-list {
+    margin-bottom: 40px;
+}
+
+.track-list li {
+    color: #888888;
+    padding: 8px 0;
+    border-bottom: 1px solid #222;
+}
+
+.track-list li a.playing {
+    color: #00BFFF;
+    font-weight: 700;
+}
+
+.track-list .playing-text {
+    font-weight: 700;
+    color: #00BFFF;
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
+.streaming-links a {
+    font-size: 2.5rem;
+    margin-right: 25px;
+    color: #888888;
+    transition: color 0.3s;
+}
+
+.streaming-links a:hover {
+    color: #FFFFFF;
+}
+
+/* AUDIO VISUALIZER */
+#audio-visualizer {
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid #00BFFF;
+    margin-top: 30px;
+    display: none; /* Hidden by default */
+}
+
+/* TOUR SECTION */
+.tour-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px;
+    border-bottom: 1px solid #333;
+    font-size: 1.1rem;
+}
+
+.tour-list .tour-date,
+.tour-list .tour-city,
+.tour-list .tour-venue {
+    flex: 1;
+}
+
+.tour-list .tour-city {
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.tour-list .ticket-link {
+    font-weight: 700;
+}
+
+.tour-list .sold-out {
+    color: #888888;
+    font-weight: 700;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 80px 40px;
+    border-top: 1px solid #222;
+}
+
+.social-links a {
+    font-size: 1.8rem;
+    margin: 0 15px;
+    color: #888888;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #FFFFFF;
+}
+
+.contact-info {
+    margin-top: 30px;
+    color: #888888;
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .profile-grid, .album-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .profile-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        padding: 80px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .tour-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0;
+    }
+
+    .tour-list span {
+        margin-bottom: 5px;
+    }
+}

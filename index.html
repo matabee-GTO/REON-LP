@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REON - OFFICIAL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="background-animation"></canvas>
+    <canvas id="cursor-trail"></canvas>
+
+    <div id="main-content-wrapper">
+        <header id="hero">
+            <div class="hero-content">
+                <h1>REON</h1>
+                <p class="subtitle">THE SOUND ARCHITECT</p>
+                <a href="#discography" class="cta-button">LISTEN TO 'ARCHETYPE'</a>
+            </div>
+        </header>
+
+        <main>
+            <section id="news" class="content-section">
+                <h2 class="section-title">NEWS</h2>
+                <ul class="news-list">
+                    <li><span class="date">2025.07.10</span> <span class="category">[RELEASE]</span> 最新アルバム『ARCHETYPE』、各種配信プラットフォームにて配信開始。</li>
+                    <li><span class="date">2025.07.01</span> <span class="category">[TOUR]</span> "REON LIVE TOUR 2025 - ARCHETYPE" 開催決定。</li>
+                    <li><span class="date">2025.06.20</span> <span class="category">[MEDIA]</span> 音楽誌「CYBERSONIC MAGAZINE」国際版の表紙に登場。</li>
+                </ul>
+                <a href="#" class="view-all">VIEW ALL</a>
+            </section>
+
+            <section id="profile" class="content-section">
+                <h2 class="section-title">PROFILE</h2>
+                <div class="profile-grid">
+                    <div class="profile-text">
+                        <h3>REON</h3>
+                        <p>東京とベルリンを拠点に活動する音楽プロデューサー、DJ。ハードテクノに建築的な美学と壮大なスケール感を融合させた独自のサウンド「Architectural Techno」を提唱。そのストイックでカリスマ的なステージと妥協なきサウンドは、世界の電子音楽シーンを牽引している。</p>
+                        <h4>AWARDS</h4>
+                        <ul class="awards-list">
+                            <li>2024: Japan Electronic Music Awards - Album of the Year</li>
+                            <li>2024: Japan Electronic Music Awards - Best Producer</li>
+                            <li>2022: CYBERSONIC MUSIC PRIZE - Track of the Year</li>
+                            <li>2019: Berlin Dance Music Awards - Best Newcomer</li>
+                        </ul>
+                    </div>
+                    <div class="profile-image">
+                        <img src="assets/images/プロフィール.png" alt="REON profile picture">
+                    </div>
+                </div>
+            </section>
+
+            <section id="discography" class="content-section">
+                <h2 class="section-title">DISCOGRAPHY</h2>
+                <div class="album-grid">
+                    <div class="album-artwork">
+                        <img src="assets/images/アルバムアート.png" alt="ARCHETYPE album artwork">
+                    </div>
+                    <div class="album-info">
+                        <h3>NEW ALBUM "ARCHETYPE"</h3>
+                        <ol class="track-list">
+                            <li>Initiation</li>
+                            <li><a href="#" id="play-track">Metropolis Grid <span id="play-indicator"><i class="fas fa-music"></i></span></a></li>
+                            <li>Concrete Soul (Rebuild)</li>
+                            <li><a href="#" id="play-track-subterranean">Subterranean Echo <span id="play-indicator-subterranean"><i class="fas fa-music"></i></span></a></li>
+                            <li>Archetype</li>
+                            <li>...and more</li>
+                        </ol>
+                        <div class="streaming-links">
+                            <a href="#" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                            <a href="#" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
+                            <a href="#" aria-label="Beatport"><i class="fa-solid fa-chart-simple"></i></a>
+                        </div>
+                        <canvas id="audio-visualizer"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tour" class="content-section">
+                <h2 class="section-title">LIVE TOUR 2025 "ARCHETYPE"</h2>
+                <ul class="tour-list">
+                    <li><span class="tour-date">2025.09.15</span> | <span class="tour-city">TOKYO</span> | <span class="tour-venue">ZEPP TOKYO</span> | <a href="#" class="ticket-link">TICKET ></a></li>
+                    <li><span class="tour-date">2025.09.20</span> | <span class="tour-city">NAGOYA</span> | <span class="tour-venue">DIAMOND HALL</span> | <a href="#" class="ticket-link">TICKET ></a></li>
+                    <li><span class="tour-date">2025.09.25</span> | <span class="tour-city">OSAKA</span> | <span class="tour-venue">GORILLA HALL OSAKA</span> | <a href="#" class="ticket-link">TICKET ></a></li>
+                    <li><span class="tour-date">2025.10.05</span> | <span class="tour-city">BERLIN</span> | <span class="tour-venue">TRESOR</span> | <span class="sold-out">SOLD OUT</span></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="X"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="contact-info">For booking and inquiries: contact@reon-official.com</p>
+            <p class="copyright">&copy; 2025 REON. ALL RIGHTS RESERVED.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <audio id="audio-player" src="Metropolis Grid.mp3"></audio>
+</body>
+</html>
